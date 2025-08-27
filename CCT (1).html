@@ -40,6 +40,7 @@
   <div id="label-container"></div>
 
   <script type="text/javascript">
+    // ✅ เปลี่ยน URL โมเดลเป็นของคุณ
     const URL = "https://teachablemachine.withgoogle.com/models/OldYqMZCp/";
 
     let model, webcam, labelContainer, maxPredictions;
@@ -52,9 +53,9 @@
       maxPredictions = model.getTotalClasses();
 
       // ตั้งค่า Webcam สำหรับมือถือ โดยระบุ facingMode
-      webcam = new tmImage.Webcam(224, 224, false); // ใช้ 224x224 เหมือนเดิม
+      webcam = new tmImage.Webcam(224, 224, false);
       try {
-        await webcam.setup({ facingMode: facingMode }); // เลือกกล้องหน้า (user) หรือหลัง (environment)
+        await webcam.setup({ facingMode: facingMode });
         await webcam.play();
         if (!webcam.canvas) {
           throw new Error("Webcam canvas is not initialized");
@@ -98,6 +99,4 @@
     }
   </script>
 </body>
-
 </html>
-
